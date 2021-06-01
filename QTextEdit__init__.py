@@ -63,7 +63,7 @@ class TextEdit(QMainWindow):
         # themes = view.addMenu("Themes")
         black = QAction("White on Black", self)
         view.addAction(black)
-        
+
         red = QAction("Red on White", self)
         view.addAction(red)
 
@@ -89,17 +89,22 @@ class TextEdit(QMainWindow):
         redOnWhite = "QTextEdit {font: 14px; color: red}"
         greenOnBlack = "QTextEdit {font: 14px; background-color: black; color: green}"
         
+
+        white = "QLineEdit {font: 14px; background-color: black; color: white}"
+        red = "QLineEdit {font: 14px; color: red}"
+        green = "QLineEdit {font: 14px; background-color: black; color: green}"
+
         if e == "White on Black":
             self.text.setStyleSheet(whiteOnBlack)
-            self.line.setStyleSheet(whiteOnBlack)
+            self.line.setStyleSheet(white)
         
         elif e == "Red on White":
             self.text.setStyleSheet(redOnWhite)
-            self.line.setStyleSheet(redOnWhite)
+            self.line.setStyleSheet(red)
 
         else:
             self.text.setStyleSheet(greenOnBlack)
-            self.line.setStyleSheet(greenOnBlack)
+            self.line.setStyleSheet(green)
 
 
     def Events(self, event):
@@ -181,9 +186,3 @@ if __name__ == "__main__":
     text = TextEdit()
     text.show()
     sys.exit(app.exec_())
-
-'''
-Consequat nisi officia id exercitation magna anim anim irure consectetur.
-Consequat nisi officia id exercitation magna anim anim irure consectetur.
-Consequat nisi officia id exercitation magna anim anim irure consectetur.
-'''
