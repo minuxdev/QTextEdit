@@ -63,14 +63,13 @@ class TextEdit(QMainWindow):
         # themes = view.addMenu("Themes")
         black = QAction("White on Black", self)
         view.addAction(black)
-
+        
         red = QAction("Red on White", self)
         view.addAction(red)
 
         green = QAction("Green on Black", self)
         view.addAction(green)
   
-
         about = self.bar.addMenu("About") 
         author = QAction("Author", self)
         about.addAction(author)
@@ -104,7 +103,6 @@ class TextEdit(QMainWindow):
 
 
     def Events(self, event):
-
         e = event.text()
         self.WordCounter()
 
@@ -122,7 +120,6 @@ class TextEdit(QMainWindow):
             self.content = self.text.toPlainText()
             self.WordCounter()
 
-
         elif e == "Save":
 
             self.fileName = 'untitled'
@@ -138,7 +135,6 @@ class TextEdit(QMainWindow):
             
             self.CreatingFile()
             self.WordCounter()
-        
 
         elif e == "Author":
             print("""
@@ -154,7 +150,6 @@ class TextEdit(QMainWindow):
             Programing Language: Python3.8.5
             Official Language: English""")
     
-
     def WordCounter(self):
 
         if self.text.toPlainText() == "":
@@ -170,7 +165,6 @@ class TextEdit(QMainWindow):
 
         self.line.setText(total)
 
-
     def CreatingFile(self):
         self.content = self.text.toPlainText()
         if '.txt' in self.fileName:
@@ -182,13 +176,11 @@ class TextEdit(QMainWindow):
         with open(currentFile, "w") as file:
             file.write(self.content)
 
-
 if __name__ == "__main__":
     app = QApplication([])
     text = TextEdit()
     text.show()
     sys.exit(app.exec_())
-
 
 '''
 Consequat nisi officia id exercitation magna anim anim irure consectetur.
